@@ -1,0 +1,46 @@
+<!-- <nav>
+    <ul>
+      <li><a (click)="onClickAddExpense($event)">Add Expense</a></li>
+    </ul>
+  </nav> -->
+  <div class="main-div">
+    <div  class="container">
+        <form [formGroup]="expenseForm" (ngSubmit)="addExpense()" class="expenseForm">
+            <div class="form-items">
+                <label for="expense_type">Expense type</label>
+                <input type="text" formControlName="expense_type">
+            </div>
+            <div class="form-items">
+                <label for="expense_val">Amount</label>
+                <input type="number" formControlName="expense_val">
+            </div>
+            <div class="form-items">
+                <label for="date">Date</label>
+                <input type="date" formControlName="expense_date">
+            </div>
+            <div style="align-self: center;">
+    
+            <button type="submit" class="btn btn-primary">Add Expense</button>
+        </div>
+        </form>
+    </div>
+    <div class="table table-bordered table-container table-striped-columns">
+        <table>
+            <tr>
+                <th>Sr No</th>
+                <th>Expense Amount</th>
+                <th>Expense Date</th>
+                <th>Expense Type</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            <tr *ngFor="let expense of expenses">
+                <td>{{ expense.id }}</td>
+                <td>{{ expense.expense_val }}</td>
+                <td>{{ expense.expense_date }}</td>
+                <td>{{ expense.expense_type }}</td>
+                <td >Edit</td>
+                <td>Delete</td>
+            </tr>
+        </table>
+    </div>    
+  </div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="loginform">
+        <div class="form-items">
+            <label for="fname">First name</label>
+            <input type="text" formControlName="fname">
+        </div>
+        <div class="form-items">
+            <label for="lname">Last name</label>
+            <input type="text" formControlName="lname">
+        </div>
+        <div class="form-items">
+            <label for="email">Email address</label>
+            <input type="email" formControlName="email">
+        </div>
+        <div class="form-items">
+            <label for="password">Password</label>
+            <input type="text" formControlName="password">
+        </div>
+        <div style="align-self: center;">
+
+        <button type="submit" class="btn btn-primary" >Register</button>
+    </div>
+    </form>
+</div>

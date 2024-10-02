@@ -1,0 +1,45 @@
+<!-- <nav>
+    <ul>
+      <li><a (click)="onClickAddIncome($event)">Add Income</a></li>
+    </ul>
+  </nav> -->
+  <div class="main-div">
+    <div class="container">
+        <form [formGroup]="incomeForm" (ngSubmit)="addIncome()" class="incomeForm">
+            <div class="form-items">
+                <label for="income_type">Income type</label>
+                <input type="text" formControlName="income_type">
+            </div>
+            <div class="form-items">
+                <label for="income_val">Amount</label>
+                <input type="number" formControlName="income_val">
+            </div>
+            <div class="form-items">
+                <label for="date">Date</label>
+                <input type="date" formControlName="income_date">
+            </div>
+            <div style="align-self: center;">
+    
+            <button type="submit" class="btn btn-primary">Add Income</button>
+        </div>
+        </form>
+    </div>
+    <div class="table table-bordered table-container">
+        <table>
+            <tr>
+                <th>Sr No</th>
+                <th>Income Amount</th>
+                <th>Income Date</th>
+                <th>Income Type</th>
+            </tr>
+            <tr *ngFor="let i of incomes">
+                <td>{{ i.id }}</td>
+                <td>{{ i.income_val }}</td>
+                <td>{{ i.income_date }}</td>
+                <td>{{ i.income_type }}</td>
+            </tr>
+        </table>
+    </div>
+    
+  </div>
+
